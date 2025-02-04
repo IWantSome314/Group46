@@ -3,4 +3,4 @@ SET08101 2024-5 TR2 001 Group46 Project
 
 # Plan
 
-Type: cyoag
+Type: cyoag 
