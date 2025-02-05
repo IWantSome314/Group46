@@ -126,3 +126,7 @@ If you make too many wrong choices, you may **never find the Golden Key**, trapp
 **The End (or is it?)**
 
 You’re in control of your adventure—**where will your choices lead you?**
+
+
+
+![alt text](story.png)
