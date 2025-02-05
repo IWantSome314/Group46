@@ -55,19 +55,60 @@
         <mxCell id="yNSGgDQWTJa8jITca0qv-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yNSGgDQWTJa8jITca0qv-24" target="yNSGgDQWTJa8jITca0qv-41" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yNSGgDQWTJa8jITca0qv-24" target="8xwqyb1k-AxS1kbP0HYi-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="yNSGgDQWTJa8jITca0qv-24" value="Look at map" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="230" y="260" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="yNSGgDQWTJa8jITca0qv-25" target="8xwqyb1k-AxS1kbP0HYi-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="390" />
+              <mxPoint x="830" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yNSGgDQWTJa8jITca0qv-25" target="8xwqyb1k-AxS1kbP0HYi-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="373" />
+              <mxPoint x="590" y="373" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="yNSGgDQWTJa8jITca0qv-25" value="Investigate the Trap Door" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="450" y="260" width="200" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="yNSGgDQWTJa8jITca0qv-27" target="8xwqyb1k-AxS1kbP0HYi-20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="370" />
+              <mxPoint x="1050" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="yNSGgDQWTJa8jITca0qv-27" target="8xwqyb1k-AxS1kbP0HYi-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="350" />
+              <mxPoint x="1260" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="yNSGgDQWTJa8jITca0qv-27" value="Open the Chest" style="rounded=1;fillColor=#FFEE58;strokeColor=#F57F17;" parent="1" vertex="1">
           <mxGeometry x="690" y="260" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="yNSGgDQWTJa8jITca0qv-29" target="8xwqyb1k-AxS1kbP0HYi-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="yNSGgDQWTJa8jITca0qv-29" target="8xwqyb1k-AxS1kbP0HYi-28">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yNSGgDQWTJa8jITca0qv-29" value="Try to open locked door" style="rounded=1;fillColor=#FFEE58;strokeColor=#F57F17;" parent="1" vertex="1">
           <mxGeometry x="900" y="260" width="200" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="yNSGgDQWTJa8jITca0qv-32" value="Enter the Humming room" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+        <mxCell id="yNSGgDQWTJa8jITca0qv-32" value="Check Other rooms" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="-750" y="410" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yNSGgDQWTJa8jITca0qv-34" value="Enter the Humming room" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
@@ -141,6 +182,27 @@
             <mxPoint x="827" y="160" as="sourcePoint" />
             <mxPoint x="977" y="240" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-9" value="Look for another clue" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="425" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-13" value="Push the stone door open" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="425" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-14" value="Go back up to the library" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="430" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-20" value="Take the glowing key" style="rounded=1;fillColor=#FFEE58;strokeColor=#F57F17;" vertex="1" parent="1">
+          <mxGeometry x="950" y="422.5" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-22" value="Checked the lock door" style="rounded=1;fillColor=#FFEE58;strokeColor=#F57F17;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="422.5" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-26" value="Open the box" style="rounded=1;fillColor=#FFEE58;strokeColor=#F57F17;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="420" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8xwqyb1k-AxS1kbP0HYi-28" value="Leave the room and return upstairs" style="rounded=1;fillColor=#FFEE58;strokeColor=#F57F17;" vertex="1" parent="1">
+          <mxGeometry x="1590" y="420" width="200" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
