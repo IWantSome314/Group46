@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.11">
   <diagram name="Page-1" id="EwCxsnY6B7EPl3IDeL0V">
-    <mxGraphModel dx="2501" dy="826" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="1">
+    <mxGraphModel dx="2566" dy="826" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -49,7 +49,7 @@
         <mxCell id="yNSGgDQWTJa8jITca0qv-19" value="Climb Stairs" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="-310" y="270" width="200" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="yNSGgDQWTJa8jITca0qv-22" value="Enter Dark Hall" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+        <mxCell id="yNSGgDQWTJa8jITca0qv-22" value="Enter Dark Hallway" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="-30" y="250" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yNSGgDQWTJa8jITca0qv-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yNSGgDQWTJa8jITca0qv-24" target="yNSGgDQWTJa8jITca0qv-41" edge="1">
@@ -114,10 +114,10 @@
         <mxCell id="yNSGgDQWTJa8jITca0qv-34" value="Enter the Humming room" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="-520" y="410" width="200" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="yNSGgDQWTJa8jITca0qv-36" value="Enter Dark Hall" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+        <mxCell id="yNSGgDQWTJa8jITca0qv-36" value="Touch the mirror" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="-300" y="412.5" width="200" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="yNSGgDQWTJa8jITca0qv-37" value="Enter Dark Hall" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+        <mxCell id="yNSGgDQWTJa8jITca0qv-37" value="Turn away and keep moving" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="-90" y="420" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yNSGgDQWTJa8jITca0qv-41" value="Pull Lever" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" parent="1" vertex="1">
