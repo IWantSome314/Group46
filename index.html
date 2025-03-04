@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Save your Friend!</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+        <body>        
+            <!--this is the big red banner at the top-->
+            <h1 id="main-header">SAVE YOUR FRIEND FROM THE HAUNTED HOUSE</h1>
+
+            <!--introduction paragraph-->
+            <div id="white-text-box">
+                As the clock strikes midnight, you stand before the grand, dilapidated mansion that whispers tales of its haunted past through the creaking of its old bones. The old wooden door groans as it swings open, inviting you into the shadowy depths of the house. Thunder rumbles ominously in the distance, and a cold wind sends shivers down your spine as you step inside. Flickering candlelights cast ghostly shadows on the walls, and an inexplicable chill tells you that you are not alone. The legend says that the house is a monstrous labyrinth, filled with ghastly creatures lurking in the darkness, waiting for the unsuspecting. Somewhere, deep within these cursed walls, your friend is trapped, crying out for help. Can you brave the terrors within and uncover the secrets held tight by the twisted corridors? With nothing but your wits and courage, you must solve the riddles that guard the path to your friend's salvation—or meet your grim fate at the hands of the lurking horrors.
+            <br>
+                To survive in this house of horrors and succeed in your rescue mission:
+                <ul>
+                <li>Once you click 'SAVE YOUR FRIEND', you'll be faced with your first chilling riddle. Solve it correctly to advance deeper into the haunted mansion.</li>
+                <li>Each riddle you encounter will determine the direction you take through the house—whether it be creeping upstairs, venturing through a mysterious door, or discovering hidden passageways.</li>
+                <li>Be warned: incorrect answers to the riddles will lead to deadly consequences. Each mistake invites a monstrous entity to end your journey.</li>
+                <li>Progress through the game by making smart choices and solving the puzzles that block your path.</li>
+                <li>Reach the end, solve all the riddles correctly, and you will find your friend and escape the horrors that haunt the mansion. Failure means eternal entrapment within its ghostly walls.</li>
+            </ul>
+            </div>
+            <br>
+
+            <!-- image of the house-->
+            <div class="house">
+                <img src="house.png" alt="Front of the haunted house" style="height: 40vh;" >
+            </div>
+            <br>
+
+            <!-- start game button-->
+            <div class="button-container">
+              <button class="start-button"><a href="question1.html">SAVE YOUR FRIEND</a></button>
+            </div>
+            
+            <!-- JS to make it bigger when hovered over-->
+            <script>
+                document.addEventListener('DOMContentLoaded', function(){
+                  const button = document.querySelector('.start-button');
+              
+                  button.addEventListener('mouseover', function() {
+                    button.style.transform = 'scale(1.2)';
+                  });
+              
+                  button.addEventListener('mouseleave', function() {
+                    button.style.transform = 'scale(1)';
+                  });
+                });
+              </script>
+    </body>
+</html>
