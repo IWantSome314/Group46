@@ -85,7 +85,23 @@ box-sizing: border-box;}
 
 
 /*------hamishs pages------*/
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
 
+.image-container {
+    position: relative;
+    margin: 0 2vw;
+}
+
+.image-container img {
+    width: 400px;
+    height: auto;
+    border: 2px solid black;
+    cursor: pointer;
+}
 
 /*------dylans pages------*/
-
