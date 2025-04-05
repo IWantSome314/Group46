@@ -2,13 +2,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   //Hamish - Spot the Difference
   const differences = [
-    { x: 270, y: 510, width: 20, height: 20 },
-    { x: 25, y: 480, width: 20, height: 20 },
-    { x: 118, y: 300, width: 20, height: 20 },
-    { x: 169, y: 329, width: 20, height: 20 },
-    { x: 269, y: 111, width: 20, height: 20 },
-    { x: 349, y: 160, width: 20, height: 20 },
-    { x: 85, y: 770, width: 20, height: 20 },
+    { x: 270, y: 510, width: 20, height: 20 }, // Women on the stairs
+    { x: 25, y: 480, width: 20, height: 20 }, // Ghost on the left
+    { x: 118, y: 300, width: 20, height: 20 }, // Status on the balcony
+    { x: 169, y: 329, width: 20, height: 20 }, // Left side window
+    { x: 269, y: 111, width: 20, height: 20 }, // Cobwebs
+    { x: 349, y: 160, width: 20, height: 20 }, // Cobwebs
+    { x: 85, y: 770, width: 20, height: 20 }, // Pillows
   ];
 
   const margin = 10;
