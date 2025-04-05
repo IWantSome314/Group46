@@ -49,46 +49,8 @@
 
 
   <!--Script to validate code and hide clues to be revelaed by torch-->
-  <script>
-    function checkCode() {
-      const inputCode = document.getElementById("codeInput").value.toLowerCase();
-      const correctCode = "5413";
-      if (inputCode === correctCode) {
-        window.location.href = "win.html";
-      } else {
-        window.location.href = "death8.html";
-      }
-    }
+  <script src="script.js"></script>
 
-    const torch = document.getElementById('torch');
-    const masks = document.querySelectorAll('.clue-mask');
-
-    let isDragging = false;
-
-    torch.addEventListener('mousedown', () => {
-      isDragging = true;
-    });
-
-    document.addEventListener('mouseup', () => {
-      isDragging = false;
-    });
-
-    document.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-
-      torch.style.left = `${e.clientX - 75}px`;
-      torch.style.top = `${e.clientY - 75}px`;
-
-      masks.forEach((mask) => {
-        const rect = mask.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        mask.style.maskImage = `radial-gradient(circle 100px at ${x}px ${y}px, transparent 0%, black 120px)`;
-        mask.style.webkitMaskImage = `radial-gradient(circle 100px at ${x}px ${y}px, transparent 0%, black 120px)`;
-      });
-    });
-  </script>
 </body>
 
 </html>

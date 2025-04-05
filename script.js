@@ -1,66 +1,95 @@
-// Hamish JS for Spot the Difference
+
 document.addEventListener("DOMContentLoaded", () => {
-    const differences = [
-        { x: 270 ,y: 510, width: 20, height: 20 }, // Women on the stairs
-        { x: 25, y: 480, width: 20, height: 20 }, // Ghost on the left
-        { x: 118, y: 300, width: 20, height: 20 }, // Status on the balcony
-        { x: 169, y: 329, width: 20, height: 20 }, // Left side window
-        { x: 269, y: 111, width: 20, height: 20 }, // Cobwebs
-        { x: 349, y: 160, width: 20, height: 20 }, // Cobwebs
-        { x: 85, y: 770, width: 20, height: 20 }, // Pillows
-    ];
+  //Hamish - Spot the Difference
+  const differences = [
+    { x: 270, y: 510, width: 20, height: 20 },
+    { x: 25, y: 480, width: 20, height: 20 },
+    { x: 118, y: 300, width: 20, height: 20 },
+    { x: 169, y: 329, width: 20, height: 20 },
+    { x: 269, y: 111, width: 20, height: 20 },
+    { x: 349, y: 160, width: 20, height: 20 },
+    { x: 85, y: 770, width: 20, height: 20 },
+  ];
 
-    const margin = 10;
+  const margin = 10;
+  const image1 = document.getElementById("image1");
+  const image2 = document.getElementById("image2");
 
-    const image1 = document.getElementById("image1");
-    const image2 = document.getElementById("image2");
-
-    // Log the screen positions of the differences
+  if (image1 && image2) {
     [image1, image2].forEach((image, index) => {
-        const rect = image.getBoundingClientRect();
-        console.log(`Image ${index + 1} differences (screen positions):`);
-        differences.forEach(diff => {
-            const screenX = rect.left + diff.x;
-            const screenY = rect.top + diff.y;
-            console.log(`Difference at screen position: (${screenX}, ${screenY})`);
-        });
-    });
+      const rect = image.getBoundingClientRect();
+      console.log(`Image ${index + 1} differences (screen positions):`);
+      differences.forEach(diff => {
+        const screenX = rect.left + diff.x;
+        const screenY = rect.top + diff.y;
+        console.log(`Difference at screen position: (${screenX}, ${screenY})`);
+      });
 
-    [image1, image2].forEach((image) => {
-        image.addEventListener("click", (event) => {
-            const rect = image.getBoundingClientRect();
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-
-            const found = differences.some(diff => 
-                x >= diff.x - margin && x <= diff.x + diff.width + margin &&
-                y >= diff.y - margin && y <= diff.y + diff.height + margin
-            );
-
-            if (found) {
-                alert("You found a difference!");
-            } else {
-                alert("Try again!");
-            }
-        });
-    });
-
-    image1.addEventListener("click", (event) => {
-        const rect = image1.getBoundingClientRect();
-        const x = event.clientX - rect.left; // Image-relative X
-        const y = event.clientY - rect.top;  // Image-relative Y
-
-        console.log(`Image-relative coordinates: (${x}, ${y})`);
-    });
-});
-
-[image1, image2].forEach((image, index) => {
-    image.addEventListener("click", (event) => {
+      image.addEventListener("click", (event) => {
         const rect = image.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
 
-        console.log(`Clicked coordinates on Image ${index + 1}: (${x}, ${y})`);
+        const found = differences.some(diff =>
+          x >= diff.x - margin &&
+          x <= diff.x + diff.width + margin &&
+          y >= diff.y - margin &&
+          y <= diff.y + diff.height + margin
+        );
+
+        alert(found ? "You found a difference!" : "Try again!");
+      });
     });
+
+    image1.addEventListener("click", (event) => {
+      const rect = image1.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      console.log(`Image-relative coordinates: (${x}, ${y})`);
+    });
+  }
+
+  // Dylan script for torch and hidden clues
+  function checkCode() {
+    const inputCode = document.getElementById("codeInput");
+    if (!inputCode) return;
+
+    const entered = inputCode.value.toLowerCase();
+    const correctCode = "5413";
+
+    window.location.href = entered === correctCode ? "win.html" : "death8.html";
+  }
+
+  window.checkCode = checkCode;
+
+  const torch = document.getElementById("torch");
+  const masks = document.querySelectorAll(".clue-mask");
+
+  if (torch) {
+    let isDragging = false;
+
+    torch.addEventListener("mousedown", () => {
+      isDragging = true;
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+
+      torch.style.left = `${e.clientX - 75}px`;
+      torch.style.top = `${e.clientY - 75}px`;
+
+      masks.forEach((mask) => {
+        const rect = mask.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        mask.style.maskImage = `radial-gradient(circle 100px at ${x}px ${y}px, transparent 0%, black 120px)`;
+        mask.style.webkitMaskImage = `radial-gradient(circle 100px at ${x}px ${y}px, transparent 0%, black 120px)`;
+      });
+    });
+  }
 });
-//
