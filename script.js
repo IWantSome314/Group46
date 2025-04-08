@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   //Hamish - Spot the Difference
   const differences = [
@@ -7,47 +6,75 @@ document.addEventListener("DOMContentLoaded", () => {
     { x: 118, y: 300, width: 20, height: 20 }, // Status on the balcony
     { x: 169, y: 329, width: 20, height: 20 }, // Left side window
     { x: 269, y: 111, width: 20, height: 20 }, // Cobwebs
-    { x: 349, y: 160, width: 20, height: 20 }, // Cobwebs
+    { x: 349, y: 160, width: 20, height: 20 }, // Cobwebs 2 for cobwebs since its  large area
     { x: 85, y: 770, width: 20, height: 20 }, // Pillows
   ];
 
-  const margin = 10;
-  const image1 = document.getElementById("image1");
-  const image2 = document.getElementById("image2");
+  const margin = 10; // Range for clicking on differences
+  const image1 = document.getElementById("image1"); // Image 1
+  const image2 = document.getElementById("image2"); // Image 2
+  let foundDifferences = 0; // Counter for found differences
+
+  // Create the button and hide it initially
+  const button = document.createElement("button");
+  button.textContent = "Next Level";
+  button.className = "spot-difference-button"; //  the 'spot-difference-button' class
+  button.style.display = "none"; // Hide the button 
+  button.style.position = "absolute";
+  button.style.top = "700px";
+  button.style.left = "90%";
+  button.style.transform = "translateX(-50%)";
+  document.body.appendChild(button);
+
+  // Add an event listener to the button
+  button.addEventListener("click", () => {
+    alert("Well Done! You found all the differences!");
+    window.location.href = "question7-dylan.html";
+  });
 
   if (image1 && image2) {
     [image1, image2].forEach((image, index) => {
       const rect = image.getBoundingClientRect();
-      console.log(`Image ${index + 1} differences (screen positions):`);
-      differences.forEach(diff => {
-        const screenX = rect.left + diff.x;
-        const screenY = rect.top + diff.y;
-        console.log(`Difference at screen position: (${screenX}, ${screenY})`);
+      console.log(`Image ${index + 1} differences (screen positions):`); // Log the differences in screen coordinates
+      differences.forEach((diff) => {
+        const screenX = rect.left + diff.x; // Convert to screen coordinates
+        const screenY = rect.top + diff.y; // Convert to screen coordinates
+        console.log(`Difference at screen position: (${screenX}, ${screenY})`); // Log the screen position for finding differences
       });
 
       image.addEventListener("click", (event) => {
         const rect = image.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
+        const x = event.clientX - rect.left; // Image-relative coordinates
+        const y = event.clientY - rect.top; // Image-relative coordinates
 
-        const found = differences.some(diff =>
-          x >= diff.x - margin &&
-          x <= diff.x + diff.width + margin &&
-          y >= diff.y - margin &&
-          y <= diff.y + diff.height + margin
-        );
+        const found = differences.some((diff, index) => {
+          if (
+            x >= diff.x - margin &&
+            x <= diff.x + diff.width + margin &&
+            y >= diff.y - margin &&
+            y <= diff.y + diff.height + margin
+          ) {
+            // Remove the found difference from the array to prevent duplicate clicks
+            differences.splice(index, 1);
+            foundDifferences++;
+            return true;
+          }
+          return false;
+        });
 
-        alert(found ? "You found a difference!" : "Try again!");
+        if (found) {
+          alert("You found a difference!");
+          // Check if all differences are found
+          if (foundDifferences === 6) {
+            button.style.display = "block"; // Show the button
+          }
+        } else {
+          alert("Try again!");
+        }
       });
     });
-
-    image1.addEventListener("click", (event) => {
-      const rect = image1.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      console.log(`Image-relative coordinates: (${x}, ${y})`);
-    });
   }
+
 
   // Dylan script for torch and hidden clues
   function checkCode() {

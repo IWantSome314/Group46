@@ -104,6 +104,36 @@ box-sizing: border-box;}
     cursor: pointer;
 }
 
+.spot-difference-button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(206, 36, 36);
+    color: black;
+    font-size: x-large;
+    cursor: pointer;
+    border: none;
+    padding: 3vh;
+    transition: padding 0.3s ease;
+}
+
+.win {
+    background-color: rgb(206, 36, 36);
+    color: black;
+    font-size: x-large;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    transition: padding 0.3s ease;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 /*------dylans pages------*/
 
 .option img.single {
