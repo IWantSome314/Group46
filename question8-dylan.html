@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Question 8</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!--Torch light-->
+  <div id="torch"></div>
+
+  <!--Text-->
+  <div id="white-text-box">
+    <p>As you reach the top of the staircase, you realise your only way forward is through a solid iron door. This time
+      it's locked, protected by a keypad beside the door. Looking around, you notice a Square, Circle, Star and Triangle
+      carved into the wall above the door</p>
+
+    <p><strong>Can you crack the 4 number passcode?</strong></p>
+    <br>
+    Hint: Click and drag the torch light to find clues!
+
+  </div>
+
+  <!--Main answer-->
+  <div class="answers">
+
+    <!-- Left clue area -->
+    <div class="clue-container">
+      <img src="clue1.png" alt="Code Machine">
+      <div class="clue-mask"></div>
+    </div>
+
+    <!--Image and input box-->
+    <div class="option">
+      <input autocomplete="off" type="text" id="codeInput" placeholder="Enter code here">
+      <button onclick="checkCode()">Submit</button>
+      <img class="single" src="EnterCode.png" alt="Code Machine">
+    </div>
+
+    <!--Right clue area-->
+    <div class="clue-container">
+      <img src="clue2.png" alt="Code Machine">
+      <div class="clue-mask"></div>
+    </div>
+
+  </div>
+
+
+  <!--Script to validate code and hide clues to be revelaed by torch-->
+  <script src="script.js"></script>
+
+</body>
+
+</html>

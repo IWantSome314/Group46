@@ -85,7 +85,81 @@ box-sizing: border-box;}
 
 
 /*------hamishs pages------*/
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
 
+.image-container {
+    position: relative;
+    margin: 0 2vw;
+}
+
+.image-container img {
+    width: 400px;
+    height: auto;
+    border: 2px solid black;
+    cursor: pointer;
+}
 
 /*------dylans pages------*/
 
+.option img.single {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.death {
+    max-height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.clue-container {
+    position: relative;
+    width: 30vw;
+    height: 100%;
+    background-color: #574c4c;
+    color: black;
+    font-size: 1.8em;
+    text-align: center;
+    line-height: 30vh;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.clue-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #574c4c;
+    mask-image: radial-gradient(circle 100px at 0px 0px, transparent 0%, black 120px);
+    -webkit-mask-image: radial-gradient(circle 100px at 0px 0px, transparent 0%, black 120px);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#torch {
+    position: fixed;
+    top: 420px;
+    left: 120px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 60%);
+    cursor: grab;
+    z-index: 1000;
+}
