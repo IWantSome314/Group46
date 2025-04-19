@@ -136,15 +136,7 @@ box-sizing: border-box;}
 }
 /*------dylans pages------*/
 
-.option img.single {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
+/*Class for death image*/
 .death {
     max-height: 50vh;
     margin-left: auto;
@@ -154,24 +146,26 @@ box-sizing: border-box;}
     box-sizing: border-box;
 }
 
+/*Class for clue div*/
 .clue-container {
     position: relative;
-    width: 30vw;
+    width: 40vw;
     height: 100%;
     background-color: #574c4c;
     color: black;
     font-size: 1.8em;
     text-align: center;
     line-height: 30vh;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
+/*Class for hiding clues*/
 .clue-mask {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 40vw;
     height: 100%;
     background-color: #574c4c;
     mask-image: radial-gradient(circle 100px at 0px 0px, transparent 0%, black 120px);
@@ -182,6 +176,7 @@ box-sizing: border-box;}
     z-index: 2;
 }
 
+/*Class for torch*/
 #torch {
     position: fixed;
     top: 420px;
@@ -192,4 +187,43 @@ box-sizing: border-box;}
     background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 60%);
     cursor: grab;
     z-index: 1000;
+}
+
+/*Class for resizing clue image*/
+.clue-container img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+}
+
+/*Class for codebreaker image*/
+.code {
+    max-width: 400px;
+    width: 100%;
+    flex-shrink: 1;
+}
+
+/*Class for codebreaker div*/
+.code img.single {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+/*Class for input box*/
+.code-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/*Class for disclaimer*/
+.disclaimer {
+    font-size: 11px;
+    font-style: italic;
 }
