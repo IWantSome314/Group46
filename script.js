@@ -10,42 +10,42 @@ document.addEventListener("DOMContentLoaded", () => {
     { x: 85, y: 770, width: 20, height: 20 }, // Pillows
   ];
 
-  const margin = 10; // Range for clicking on differences
+  const margin = 25; 
   const image1 = document.getElementById("image1"); // Image 1
   const image2 = document.getElementById("image2"); // Image 2
-  let foundDifferences = 0; // Counter for found differences
+  let foundDifferences = 0; 
 
-  // Create the button and hide it initially
   const button = document.createElement("button");
   button.textContent = "Next Level";
-  button.className = "spot-difference-button"; //  the 'spot-difference-button' class
-  button.style.display = "none"; // Hide the button 
+  button.className = "spot-difference-button"; 
+  button.style.display = "none";
   button.style.position = "absolute";
   button.style.top = "700px";
   button.style.left = "90%";
   button.style.transform = "translateX(-50%)";
   document.body.appendChild(button);
 
-  // Add an event listener to the button
+
   button.addEventListener("click", () => {
     alert("Well Done! You found all the differences!");
     window.location.href = "question7-dylan.html";
   });
 
+  
   if (image1 && image2) {
     [image1, image2].forEach((image, index) => {
       const rect = image.getBoundingClientRect();
-      console.log(`Image ${index + 1} differences (screen positions):`); // Log the differences in screen coordinates
+      console.log(`Image ${index + 1} differences (screen positions):`);
       differences.forEach((diff) => {
-        const screenX = rect.left + diff.x; // Convert to screen coordinates
-        const screenY = rect.top + diff.y; // Convert to screen coordinates
-        console.log(`Difference at screen position: (${screenX}, ${screenY})`); // Log the screen position for finding differences
+        const screenX = rect.left + diff.x; 
+        const screenY = rect.top + diff.y; 
+        console.log(`Difference at screen position: (${screenX}, ${screenY})`); 
       });
 
       image.addEventListener("click", (event) => {
         const rect = image.getBoundingClientRect();
-        const x = event.clientX - rect.left; // Image-relative coordinates
-        const y = event.clientY - rect.top; // Image-relative coordinates
+        const x = event.clientX - rect.left; 
+        const y = event.clientY - rect.top; 
 
         const found = differences.some((diff, index) => {
           if (
