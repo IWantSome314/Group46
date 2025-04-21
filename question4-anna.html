@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quick thinking</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+     <body>
+        
+        <!-- Story-->
+        <div id="white-text-box">
+        
+            <p><h2>You have succesfully put some distance between you and whatever that thing was..</h2></p>
+            <p>but for how long? You assess your surroundings and notice a small fragmented stairwell, as you creep up you start to notice scribbles all up the walls! None of which you can make out... </p>
+            <p> As you get close to the top you notice the door is locked shut with a giant padlock. Just then you hear the creaking and heavy breathing coming from the bottom of the stairwell, no going back now! </p>
+            <br>
+                
+            <p><strong> There seems to be something carved on the door but you just can't quite read it yet. The top step looks fragile but you cant reach the lock otherwise and theres no chance of getting back down... Maybe the writing on the door will help? </strong></p> 
+        </div>
+              
+        <!--answer input and images-->
+         <div class="answer">
+
+            <!-- Start button-->
+             <button id="startBtn">Take the Step</button>
+            
+            <!-- Question and input area -->
+            <div id="question" style="margin-top: 0px; font-size: 20px;"></div>
+            <input type="number" id="answerInput" style="display:none;" />
+            <button id="submitBtn" style="display:none;">Submit Answer</button>
+            
+             <!-- Timer, initially hidden -->
+            <p id="timeContainer" style="display:none;">
+            Time left: <span id="timer">15</span> seconds
+            </p>
+            
+            <!-- Image -->
+            <img src="topdoor.png" alt="Image of a door at the top of a curved stairwell">
+
+         </div>
+
+         <!-- JS Script-->
+        <script src="script.js"></script>
+    </body>
+</html>
