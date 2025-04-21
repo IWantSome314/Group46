@@ -1,4 +1,118 @@
 document.addEventListener("DOMContentLoaded", () => {
+  
+  setTimeout(() => {
+    const image = document.querySelector('.death');
+    image.classList.add('jump-scare'); 
+    
+    // Set jump scare to happen 1 second after nav and last 1 second
+    setTimeout(() => {
+      image.classList.remove('jump-scare');
+    }, 1000); 
+  }, 2000); 
+
+  //Anna - maths
+  //declare variables
+  let timeLeft = 15;
+  let countdown;
+  let correctAnswer = null;
+  let correctCount = 0;
+  
+  const timerElement = document.getElementById("timer");
+  const startBtn = document.getElementById("startBtn");
+  const questionElement = document.getElementById("question");
+  const answerInput = document.getElementById("answerInput");
+  const submitBtn = document.getElementById("submitBtn");
+  const startButton = document.getElementById("startBtn");
+  
+  //question generating logic
+  function generateQuestion() {
+    const operators = ["+", "-"];
+    const operator = operators[Math.floor(Math.random() * operators.length)];
+  
+    const num1 = Math.floor(Math.random() * 20) + 1;
+    const num2 = Math.floor(Math.random() * 20) + 1;
+  
+    if (operator === "+") {
+      correctAnswer = num1 + num2;
+      questionElement.textContent = `${num1} + ${num2} = ?`;
+    } else {
+      const bigger = Math.max(num1, num2);
+      const smaller = Math.min(num1, num2);
+      correctAnswer = bigger - smaller;
+      questionElement.textContent = `${bigger} - ${smaller} = ?`;
+    }
+  
+    answerInput.style.display = "inline";
+    submitBtn.style.display = "inline";
+  }
+
+
+  // Increase and decrease size on hover
+  startButton.addEventListener("mouseover", () => {
+    startButton.style.transform = "scale(1.2)";
+    startButton.style.transition = "transform 0.2s ease";
+  });
+
+  startButton.addEventListener("mouseout", () => {
+    startButton.style.transform = "scale(1)";
+  });
+  
+  // actual games mechanics
+  function startGame() {
+    if (countdown) return;
+
+    // Show timer
+    document.getElementById("timeContainer").style.display = "block";
+  
+    timeLeft = 15;
+    timerElement.textContent = timeLeft;
+  
+    countdown = setInterval(() => {
+      timeLeft--;
+      timerElement.textContent = timeLeft;
+  
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        window.location.href = "death4.html";
+      }
+    }, 1000);
+  
+    generateQuestion();
+  }
+
+  //Button starts game 
+  startBtn.addEventListener("click", startGame);
+  
+  //submitting logic and validation
+  submitBtn.addEventListener("click", () => {
+    const userAnswer = parseInt(answerInput.value);
+  
+    if (userAnswer === correctAnswer) {
+      correctCount++;
+      if (correctCount === 3) {
+        clearInterval(countdown);
+        window.location.href = "question5-riddle-hamish.html"; 
+      } else {
+        alert(`Correct! ${3 - correctCount} more to go.`);
+        answerInput.value = "";
+        generateQuestion(); 
+      }
+    } else {
+      alert("Incorrect! Try again.");
+      answerInput.value = "";
+      generateQuestion(); 
+    }
+  });
+
+  // Allow enter key to sumbit answer
+  answerInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      submitBtn.click(); // Triggers the same logic as the button
+    }
+  });
+
+
+ 
   //Hamish - Spot the Difference
   const differences = [
     { x: 270, y: 510, width: 20, height: 20 }, // Women on the stairs
@@ -10,42 +124,42 @@ document.addEventListener("DOMContentLoaded", () => {
     { x: 85, y: 770, width: 20, height: 20 }, // Pillows
   ];
 
-  const margin = 25; 
+  const margin = 10; // Range for clicking on differences
   const image1 = document.getElementById("image1"); // Image 1
   const image2 = document.getElementById("image2"); // Image 2
-  let foundDifferences = 0; 
+  let foundDifferences = 0; // Counter for found differences
 
+  // Create the button and hide it initially
   const button = document.createElement("button");
   button.textContent = "Next Level";
-  button.className = "spot-difference-button"; 
-  button.style.display = "none";
+  button.className = "spot-difference-button"; //  the 'spot-difference-button' class
+  button.style.display = "none"; // Hide the button 
   button.style.position = "absolute";
   button.style.top = "700px";
   button.style.left = "90%";
   button.style.transform = "translateX(-50%)";
   document.body.appendChild(button);
 
-
+  // Add an event listener to the button
   button.addEventListener("click", () => {
     alert("Well Done! You found all the differences!");
     window.location.href = "question7-dylan.html";
   });
 
-  
   if (image1 && image2) {
     [image1, image2].forEach((image, index) => {
       const rect = image.getBoundingClientRect();
-      console.log(`Image ${index + 1} differences (screen positions):`);
+      console.log(`Image ${index + 1} differences (screen positions):`); // Log the differences in screen coordinates
       differences.forEach((diff) => {
-        const screenX = rect.left + diff.x; 
-        const screenY = rect.top + diff.y; 
-        console.log(`Difference at screen position: (${screenX}, ${screenY})`); 
+        const screenX = rect.left + diff.x; // Convert to screen coordinates
+        const screenY = rect.top + diff.y; // Convert to screen coordinates
+        console.log(`Difference at screen position: (${screenX}, ${screenY})`); // Log the screen position for finding differences
       });
 
       image.addEventListener("click", (event) => {
         const rect = image.getBoundingClientRect();
-        const x = event.clientX - rect.left; 
-        const y = event.clientY - rect.top; 
+        const x = event.clientX - rect.left; // Image-relative coordinates
+        const y = event.clientY - rect.top; // Image-relative coordinates
 
         const found = differences.some((diff, index) => {
           if (

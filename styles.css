@@ -22,7 +22,9 @@ margin-right: 5vw;
 padding: 2vw;
 color: black;
 font-size: 15pt;
-font-family: Arial;}
+font-family: Arial;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 10px;}
 
 /*all hyperlinks - may still have to specify*/
  a {
@@ -82,7 +84,86 @@ padding: 20px;
 box-sizing: border-box;}
 
 /*------annas pages------*/
+.photo-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    position: relative;
+    width: 1580px; 
+  }
+  .answer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  
+  
+  #startBtn {
+    font-size: 24px;
+    padding: 20px 40px;
+    background-color: #e63946; 
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+  
+  #startBtn:hover {
+    background-color: #d62828; 
+  }
 
+  #submitBtn {
+    font-size: 20px;
+    padding: 15px 30px;
+    background-color: #457b9d;  
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  
+  #submitBtn:hover {
+    background-color: #1d3557;  
+    transform: scale(1.05);     
+  }
+
+  #timeContainer {
+    font-size: 20px;  
+  }
+  
+  .photo-container img {
+    margin-top: 0;
+    width: 100%;
+    display: block;
+  }
+  
+  .click-zone {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .left-zone {
+    left: 0;
+    width: 45%;
+  }
+  
+  .right-zone {
+    right: 0;
+    width: 45%;
+  }
 
 /*------hamishs pages------*/
 #game-container {
@@ -136,9 +217,8 @@ box-sizing: border-box;}
 }
 /*------dylans pages------*/
 
-/*Class for death image*/
-.death {
-    max-height: 50vh;
+.option img.single {
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -146,26 +226,42 @@ box-sizing: border-box;}
     box-sizing: border-box;
 }
 
-/*Class for clue div*/
+.death {
+    width: 500px; 
+    height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease-in-out; 
+  }
+  
+  /* Make the image 2x larger */
+  .jump-scare {
+    transform: scale(2); 
+    transition: transform 0.2s ease-in-out;
+  }
+
+
 .clue-container {
     position: relative;
-    width: 40vw;
+    width: 30vw;
     height: 100%;
     background-color: #574c4c;
     color: black;
     font-size: 1.8em;
     text-align: center;
     line-height: 30vh;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
 }
 
-/*Class for hiding clues*/
 .clue-mask {
     position: absolute;
     top: 0;
     left: 0;
-    width: 40vw;
+    width: 100%;
     height: 100%;
     background-color: #574c4c;
     mask-image: radial-gradient(circle 100px at 0px 0px, transparent 0%, black 120px);
@@ -176,7 +272,6 @@ box-sizing: border-box;}
     z-index: 2;
 }
 
-/*Class for torch*/
 #torch {
     position: fixed;
     top: 420px;
@@ -187,43 +282,4 @@ box-sizing: border-box;}
     background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 60%);
     cursor: grab;
     z-index: 1000;
-}
-
-/*Class for resizing clue image*/
-.clue-container img {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-}
-
-/*Class for codebreaker image*/
-.code {
-    max-width: 400px;
-    width: 100%;
-    flex-shrink: 1;
-}
-
-/*Class for codebreaker div*/
-.code img.single {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-}
-
-/*Class for input box*/
-.code-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-/*Class for disclaimer*/
-.disclaimer {
-    font-size: 11px;
-    font-style: italic;
 }
