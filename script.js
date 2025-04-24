@@ -8,45 +8,54 @@ document.addEventListener("DOMContentLoaded", () => {
     { x: 118, y: 300, width: 20, height: 20 }, // Status on the balcony
     { x: 169, y: 329, width: 20, height: 20 }, // Left side window
     { x: 269, y: 111, width: 20, height: 20 }, // Cobwebs
-    { x: 349, y: 160, width: 20, height: 20 }, // Cobwebs
+    { x: 349, y: 160, width: 20, height: 20 }, // Cobwebs since its large area
     { x: 85, y: 770, width: 20, height: 20 }, // Pillows
   ];
 
   const margin = 10;
-  const image1 = document.getElementById("image1");
-  const image2 = document.getElementById("image2");
-  let foundDifferences = 0; 
+  const image1 = document.getElementById("image1"); // First image element
+  const image2 = document.getElementById("image2"); // Second image element
+  let foundDifferences = 0; // Counter for found differences
 
   const button = document.createElement("button");
   button.textContent = "Next Level";
   button.className = "spot-difference-button"; 
-  button.style.display = "block"; // Initially hidden
+  button.style.display = "none"; // Initially hidden button for the next level
   button.style.position = "absolute";
   button.style.top = "700px";
-  button.style.left = "90%";
-  button.style.transform = "translateX(-50%)";
-  document.body.appendChild(button);
+  // Position the "Next Level" button and append it to the document body
+  button.style.left = "90%"; // Position the button horizontally
+  button.style.transform = "translateX(-50%)"; // Center the button horizontally
+  document.body.appendChild(button); // Add the button to the DOM
 
 
+  // Add a click event listener to the button
   button.addEventListener("click", () => {
-    alert("Well Done! You found all the differences!");
-    window.location.href = "question7-dylan.html";
+    alert("Well Done! You found all the differences!"); // Show a success message
+    window.location.href = "question7-dylan.html"; // Redirect to the next level
   });
+
+  // Check if both images exist
   if (image1 && image2) {
+    // Loop through both images
     [image1, image2].forEach((image, index) => {
-      const rect = image.getBoundingClientRect();
-      console.log(`Image ${index + 1} differences (screen positions):`);
+      const rect = image.getBoundingClientRect(); // Get the image's position and size
+      console.log(`Image ${index + 1} differences (screen positions):`); // Log the image index
+
+      // Log the screen positions of the differences
       differences.forEach(diff => {
-        const screenX = rect.left + diff.x;
-        const screenY = rect.top + diff.y;
-        console.log(`Difference at screen position: (${screenX}, ${screenY})`);
+        const screenX = rect.left + diff.x; // Calculate the X position on the screen
+        const screenY = rect.top + diff.y; // Calculate the Y position on the screen
+        console.log(`Difference at screen position: (${screenX}, ${screenY})`); // Log the position
       });
 
+      // Add a click event listener to the image
       image.addEventListener("click", (event) => {
-        const rect = image.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
+        const rect = image.getBoundingClientRect(); // Get the image's position and size
+        const x = event.clientX - rect.left; // Calculate the X coordinate of the click
+        const y = event.clientY - rect.top; // Calculate the Y coordinate of the click
 
+        // Check if the click matches any of the differences
         const found = differences.some(diff =>
           x >= diff.x - margin &&
           x <= diff.x + diff.width + margin &&
@@ -55,23 +64,25 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         if (found) {
-          alert("You found a difference!");
-          foundDifferences++;
-          if (foundDifferences === 6) {
-            button.style.display = "block";
+          alert("You found a difference!"); // Notify the user of a correct click
+          foundDifferences++; // Increment the found differences counter
+          if (foundDifferences === 6) { // There are 7 differences in total but there is an extra one for the cobwebs
+            alert("You found all the differences!"); // Notify the user of finding all differences
+            button.style.display = "block"; // Show the "Next Level" button
           }
         } else {
-          alert("Try again!");
+          alert("Try again!"); // Notify the user of an incorrect click
         }
 
       });
     });
 
+    // Add a click event listener to the first image for debugging
     image1.addEventListener("click", (event) => {
-      const rect = image1.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      console.log(`Image-relative coordinates: (${x}, ${y})`);
+      const rect = image1.getBoundingClientRect(); // Get the image's position and size
+      const x = event.clientX - rect.left; // Calculate the X coordinate of the click
+      const y = event.clientY - rect.top; // Calculate the Y coordinate of the click
+      console.log(`Image-relative coordinates: (${x}, ${y})`); // Log the coordinates for debugging
     });
   }
 
