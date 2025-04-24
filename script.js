@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
           foundDifferences++; // Increment the found differences counter
           if (foundDifferences === 6) { // There are 7 differences in total but there is an extra one for the cobwebs
             alert("You found all the differences!"); // Notify the user of finding all differences
+            image1.style.pointerEvents = "none"; // Disable further clicks on the first image
             button.style.display = "block"; // Show the "Next Level" button
           }
         } else {
