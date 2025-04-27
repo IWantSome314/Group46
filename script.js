@@ -135,16 +135,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-//  ----------------------------------------------------------------
+//  death page logic ----------------------------------------------------------------
     setTimeout(() => {
       const image = document.querySelector('.death');
       image.classList.add('jump-scare'); 
       
-      // Set jump scare to happen 1 second after nav and last 1 second
+      // Set jump scare to happen 1 second after nav and last 2 seconds
       setTimeout(() => {
         image.classList.remove('jump-scare');
-      }, 1000); 
-    }, 2000); 
+      }, 2000); 
+    }, 1000); 
   
     //Anna - maths
     //declare variables
