@@ -154,7 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let correctCount = 0;
     
     const timerElement = document.getElementById("timer");
-    const startBtn = document.getElementById("startBtn");
     const questionElement = document.getElementById("question");
     const answerInput = document.getElementById("answerInput");
     const submitBtn = document.getElementById("submitBtn");
@@ -217,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     //Button starts game 
-    startBtn.addEventListener("click", startGame);
+    startButton.addEventListener("click", startGame);
     
     //submitting logic and validation
     submitBtn.addEventListener("click", () => {
